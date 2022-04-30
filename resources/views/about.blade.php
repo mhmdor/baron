@@ -110,7 +110,7 @@
 
         <section class="inner-page">
               <!-- ======= About Section ======= -->
-        <section id="about" class="about">
+        <section id="about1" class="about1">
             <div class="container" data-aos="fade-up">
 
                 <div class="row">
@@ -137,7 +137,7 @@
         </section><!-- End About Section -->
 
         <!-- ======= Why Us Section ======= -->
-        <section id="why-us" class="why-us">
+        <section id="why-us1" class="why-us1">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title">
