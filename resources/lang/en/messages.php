@@ -35,8 +35,8 @@ return [
    'message'=>'Message',
  'all'=>'All',
  'openhours'=>'Open Hours',
- 'order'=>'Our Order',
-  'orders'=>'Orders In Baron Restaurant',
+ 'order'=>'Our Offers',
+  'orders'=>'Offers In Baron Restaurant',
 
 
 
