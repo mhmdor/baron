@@ -10,8 +10,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('assets/img/logo2.png')}}" rel="icon">
+  <link href="{{asset('assets/img/logo2.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -72,11 +72,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
           <ul>
-              <li><a class="nav-link scrollto active" href="{{route('welcome')}}">{{ __('messages.home') }}</a></li>
-              <li><a class="nav-link scrollto" href="{{route('get.menu')}}">{{ __('messages.menu') }}</a></li>
-              <li><a class="nav-link scrollto" href="{{route('get.image')}}">{{ __('messages.gallery') }}</a></li>
-              <li><a class="nav-link scrollto" href="{{route('get.contact')}}">{{ __('messages.contact') }}</a></li>
-             
+            <li><a class="nav-link scrollto active"
+              href="{{ route('welcome') }}">{{ __('messages.home') }}</a></li>
+      <li><a class="nav-link scrollto" href="{{route('get.menu')}}">{{ __('messages.menu') }}</a></li>
+      <li><a class="nav-link scrollto" href="{{route('get.image')}}">{{ __('messages.gallery') }}</a></li>
+      <li><a class="nav-link scrollto" href="{{route('get.contact')}}">{{ __('messages.contact') }}</a></li>
+      <li><a class="nav-link scrollto" href="{{route('get.about')}}">{{ __('messages.about') }}</a></li>
 
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
@@ -92,10 +93,10 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Orders</h2>
+          <h2>Offers</h2>
           <ol>
             <li><a href="{{route('welcome')}}">Home</a></li>
-            <li>Orders</li>
+            <li>Offers</li>
           </ol>
         </div>
 

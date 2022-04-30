@@ -43,9 +43,9 @@ class ItemController extends Controller
         $this->validate($request, [
             'name_ar' => 'required',
             'name_en' =>'required',
-            'description_ar' =>'required',
-            'description_en' =>'required',
-            'image' => 'required|mimes:jpeg,jpg,png,bmp',
+            // 'description_ar' =>'required',
+            // 'description_en' =>'required',
+            // 'image' => 'required|mimes:jpeg,jpg,png,bmp',
             'price' =>'required',
             'category' =>'required',
         ]);
@@ -61,7 +61,7 @@ class ItemController extends Controller
             }
             $image->move('uploads/item',$imagename);
         } else{
-            // $imagename = 'default.png';
+            $imagename = null;
         }
 
         $item = new Item();
@@ -116,8 +116,8 @@ class ItemController extends Controller
         $this->validate($request, [
             'name_ar' => 'required',
             'name_en' => 'required',
-            'description_ar' =>'required',
-            'description_en' =>'required',
+            // 'description_ar' =>'required',
+            // 'description_en' =>'required',
             'price' =>'required',
             'category' =>'required',            
         ]);
@@ -160,8 +160,10 @@ class ItemController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
-      
+        if($item->image != null){
         unlink('uploads/item/'.$item->image);
+        }        
+        
         $item->delete();
         return redirect()->back()->with('successMsg','تم حذف المنتج بنجاح');
     }

@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="assets/img/logo2.png" rel="icon">
+    <link href="assets/img/logo2.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -76,12 +76,14 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="{{route('welcome')}}">{{ __('messages.home') }}</a></li>
-                    {{-- <li><a class="nav-link scrollto" href="#about">{{ __('messages.about') }}</a></li> --}}
-                    <li><a class="nav-link scrollto" href="#menu">{{ __('messages.menu') }}</a></li>
-                    <li><a class="nav-link scrollto" href="#gallery">{{ __('messages.gallery') }}</a></li>
-                    <li><a class="nav-link scrollto" href="{{route('get.order')}}">{{ __('messages.order') }}</a></li>
-                    <li><a class="nav-link scrollto" href="#contact">{{ __('messages.contact') }}</a></li>
+                    <li><a class="nav-link scrollto active"
+                        href="{{ route('welcome') }}">{{ __('messages.home') }}</a></li>
+                <li><a class="nav-link scrollto" href="{{route('get.menu')}}">{{ __('messages.menu') }}</a></li>
+                <li><a class="nav-link scrollto" href="{{route('get.image')}}">{{ __('messages.gallery') }}</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('get.order') }}">{{ __('messages.order') }}</a> </li>
+                <li><a class="nav-link scrollto" href="{{route('get.contact')}}">{{ __('messages.contact') }}</a></li>
+                <li><a class="nav-link scrollto" href="{{route('get.about')}}">{{ __('messages.about') }}</a></li>
+
                    
 
                 </ul>
@@ -129,34 +131,7 @@
                                     data-aos="zoom-in" data-aos-delay="200">
                                     <a href="https://youtu.be/KVfJfL8Jfmk" class="glightbox play-btn"></a>
                                 </div>
-                                {{-- @if (session('success'))
-                                <div class="alert alert-success">
-                                    <button type="button" class="close" onclick="this.parentElement.style.display='none'; ">
-                                        <i class="material-icons">close</i>
-                                    </button>
-                                    <span> {{ session('success') }}</span>
-                                </div>
-                            @endif
-                            
-                            @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <button type="button" class="close" onclick="this.parentElement.style.display='none'; ">
-                                    <i class="material-icons">close</i>
-                                </button>
-                                <span>
-                                            تأكد من البيانات المدخلة</span>
-                            </div>
-                                @foreach ($errors->all() as $error)
-                                    <div class="alert alert-danger">
-                                        <button type="button" class="close" onclick="this.parentElement.style.display='none'; ">
-                                            <i class="material-icons">close</i>
-                                        </button>
-                                        <span>
-                                                                      {{ $error }}</span>
-                                    </div>
-                                @endforeach
-                            
-                            @endif --}}
+                                
                             </div>
 
                         </div>
@@ -260,7 +235,11 @@
                         class="btn-book animate__animated animate__fadeInUp scrollto">{{ __('messages.Contact') }}</a>
                      <a href="{{route('get.image')}}"
                         class="btn-book animate__animated animate__fadeInUp scrollto">{{ __('messages.Gallery') }}</a>
-      
+                        <a href="{{route('get.order')}}"
+                        class="btn-book animate__animated animate__fadeInUp scrollto">{{ __('messages.order') }}</a>
+                        <a href="{{route('get.about')}}"
+                        class="btn-book animate__animated animate__fadeInUp scrollto">{{ __('messages.about') }}</a>
+                      
                 
 
            
@@ -277,28 +256,16 @@
                         </div>
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-                        <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+                        <h2>{{ __('messages.desc') }}</h2>
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                            {{ __('messages.desc1') }}
                         </p>
                         <ul>
-                            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat.</li>
-                            <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate
-                                velit.</li>
-                            <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo
-                                consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda
-                                mastiro dolore eu fugiat nulla pariatur.</li>
+                            <li><i class="bi bi-check-circle"></i> {{ __('messages.desc2') }}</li>
+                            <li><i class="bi bi-check-circle"></i> {{ __('messages.desc3') }}</li>
+                            <li><i class="bi bi-check-circle"></i> {{ __('messages.desc4') }}</li>
                         </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum
-                        </p>
+                  
                     </div>
                 </div>
 
@@ -316,30 +283,35 @@
 
                 <div class="row">
 
-                    <div class="col-lg-4">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-3">
+                        <div class="box text-center" data-aos="zoom-in" data-aos-delay="100">
                           
-                          <h4> <span>Repellat Nihil</span> </h4> 
-                            <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero
-                                placeat</p>
+                          <h4> <span>{{ __('messages.why4') }}</span> </h4> 
+                            <p></p>
                         </div>
+                        
                     </div>
 
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="col-lg-3 mt-4 mt-lg-0">
+                        <div class="box text-center" data-aos="zoom-in" data-aos-delay="200">
                            
-                          <h4> <span>Repellat Nihil</span> </h4> 
-                            <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire
-                                leno para dest</p>
+                          <h4> <span>{{ __('messages.why1') }}</span> </h4> 
+                            <p></p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 mt-4 mt-lg-0">
-                        <div class="box" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="col-lg-3 mt-4 mt-lg-0">
+                        <div class="box text-center" data-aos="zoom-in" data-aos-delay="300">
                             
-                        <h4> <span>Repellat Nihil</span> </h4> 
-                            <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam
-                                quis</p>
+                        <h4> <span>{{ __('messages.why2') }}</span> </h4> 
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mt-4 mt-lg-0">
+                        <div class="box text-center" data-aos="zoom-in" data-aos-delay="300">
+                            
+                        <h4> <span>{{ __('messages.why3') }}</span> </h4> 
+                            <p></p>
                         </div>
                     </div>
 

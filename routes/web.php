@@ -71,6 +71,9 @@ Route::group( [
         Route::get('/contact',function(){
             return view('contact');
         })->name('get.contact');
+        Route::get('/about',function(){
+            return view('about');
+        })->name('get.about');
         ############################################################
         Route::post('/reservation', 'ReservationController@reserve')->name('reservation.reserve');
     }
