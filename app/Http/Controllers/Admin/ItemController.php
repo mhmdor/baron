@@ -61,7 +61,7 @@ class ItemController extends Controller
             }
             $image->move('uploads/item',$imagename);
         } else{
-            $imagename = 'default.png';
+            // $imagename = 'default.png';
         }
 
         $item = new Item();
@@ -160,6 +160,7 @@ class ItemController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
+      
         unlink('uploads/item/'.$item->image);
         $item->delete();
         return redirect()->back()->with('successMsg','تم حذف المنتج بنجاح');
